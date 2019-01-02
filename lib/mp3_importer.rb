@@ -6,8 +6,9 @@ class MP3Importer
     @path = path
   end
   def files
+  Dir.entries('./spec/fixtures')
   end
-  def import(list_of_filenames)
-    list_of_filenames.each{ |filename| Song.new_by_filename(filename) }
+  def import(filenames)
+  filenames.each{ |filename| Song.new_by_filename(filename) }
   end
 end
